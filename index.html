@@ -1,15 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" id="root" class="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/style.css">
-  <title>Decodificador | Alura Challenge</title>
+  <script src="./scripts/main.js" defer></script>
+
+  <title>Decodificador | Alura Challenge
+    | vander.dev
+  </title>
 </head>
 
 <body>
+  <main class="container">
 
+    <aside class="container_logo">
+
+      <img class="container_logo_logo" src="./assets/images/logo.png" id="logo"
+        alt="Logo da Alura ao lado do logo de vander.dev" data-theme="light">
+      <img class="container_logo_logo" src="./assets/images/logo-dark.png"
+        alt="Logo da Alura ao lado do logo de vander.dev" data-theme="dark">
+
+    </aside>
+
+    <section class="container_content">
+      <textarea class="container_content_textarea" type="text" placeholder="Digite seu texto..."></textarea>
+
+      <div class="container_content_information">
+        <img src="./assets/icons/info.png" alt="" data-theme="light">
+        <img src="./assets/icons/info-dark.png" alt="" data-theme="dark">
+
+        <span>Apenas letras minúsculas e
+          sem acento.</span>
+      </div>
+
+      <div class="container_content_buttons">
+        <button class="container_content_buttons_button" onclick="handleEncrypt()">Criptografar</button>
+
+        <div class="container_content_buttons_separator">
+          <button class="container_content_buttons_button" data-variant="outlined"
+            onclick="handleDecrypt()">Descriptografar</button>
+
+          <button class="container_content_buttons_button" data-variant="icon" onclick="handleToggleTheme()">
+            <img src="./assets/icons/theme.png" alt="" data-theme="light">
+            <img src="./assets/icons/theme-dark.png" alt="" data-theme="dark">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="container_messages">
+      <div class="container_messages_informations" id="informations" data-visible>
+        <img src="./assets/images/chat.png" alt="Figura de uma garota segurando uma lupa de frente pra um diamente"
+          title="Alura | vander.dev" data-theme="light">
+        <img src="./assets/images/chat-dark.png" alt="Figura de uma garota segurando uma lupa de frente pra um diamente"
+          data-theme="dark">
+
+        <strong>Nenhuma mensagem
+          encontada :(</strong>
+
+        <span>Digite um texto que você
+          deseja criptografar
+          ou descriptografar.</span>
+      </div>
+
+      <div class="container_messages_data" id="data">
+        <p class="container_messages_data_text" id="data_text"></p>
+        <button class="container_messages_data_button" data-variant="outlined" onclick="copyToClipboard()">
+          Copiar
+        </button>
+      </div>
+    </aside>
+  </main>
 </body>
 
 </html>
